@@ -1,4 +1,13 @@
+###
+# Builder
+###
+FROM jekyll/builder:3.8 as base
+COPY . /srv/jekyll/
+RUN jekyll build
+
+###
+# Runtime
+###
 FROM nginx
 EXPOSE 80
-
-COPY _site/ /usr/share/nginx/html
+COPY --from=base /srv/jekyll/_site/ /usr/share/nginx/html
