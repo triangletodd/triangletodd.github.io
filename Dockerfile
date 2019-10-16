@@ -10,4 +10,4 @@ RUN jekyll build
 ###
 FROM nginx
 EXPOSE 80
-COPY --from=base /srv/jekyll/_site/ /usr/share/nginx/html
+COPY --from=base /srv/jekyll/_site /usr/share/nginx/html/
