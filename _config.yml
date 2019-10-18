@@ -18,6 +18,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Dockerfile
+  - captain-definition
 #   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/
