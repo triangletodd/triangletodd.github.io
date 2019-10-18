@@ -12,12 +12,12 @@ github_username: triangletodd
 #theme: minima
 # plugins:
 #   - jekyll-feed
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
+  - Dockerfile
 #   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/
