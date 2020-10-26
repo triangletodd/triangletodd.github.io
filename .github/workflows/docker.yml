@@ -1,0 +1,25 @@
+name: Docker
+
+on: [push]
+
+jobs:
+  github:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Login to docker hub
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build :latest
+        if: success()
+        run: docker build -t todd/rte-dev:latest .
+
+      - name: Push :latest
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push todd/rte-dev:latest
